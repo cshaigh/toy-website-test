@@ -16,10 +16,10 @@ Describe 'Toy Website'
             Should -Be 200 -Because "the website requires HTTPS"
     }
 
-    It 'Does not serve pages over HTTP' {
+    It 'Does not serves pages over HTTP' {
         $request = [System.Net.WebRequest]::Create("http://$HostName/")
         $request.AllowAutoRedirect = $false
         $request.GetResponse().StatusCode |
-            Should -BeGreaterOrEqual 300 -Because "HTTP is now secure"
+            Should -BeGreaterOrEqual 300 -Because "HTTP is not secure"
     }
 }
