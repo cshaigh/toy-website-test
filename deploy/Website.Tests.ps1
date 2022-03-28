@@ -13,7 +13,7 @@ Describe 'Toy Website' {
         Should -Be 200 -Because "the website requires HTTPS"
     }
 
-    It 'Does not serves pages over HTTP' {
+    It 'Does not serve pages over HTTP' {
       $request = [System.Net.WebRequest]::Create("http://$HostName/")
       $request.AllowAutoRedirect = $false
       $request.GetResponse().StatusCode | 
