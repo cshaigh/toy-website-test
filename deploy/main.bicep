@@ -59,6 +59,8 @@ resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
           value: applicationInsights.properties.ConnectionString
         }
       ]
+      localMySqlEnabled: false
+      netFrameworkVersion: 'v4.6'
     }
   }
 }
